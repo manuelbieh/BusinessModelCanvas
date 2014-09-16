@@ -1,0 +1,11 @@
+{
+	"dirs": {
+		"src":"src",
+		"dist":"dist"
+	},
+	"url": {
+		"prod": {
+			"static": ""
+		}
+	}
+}

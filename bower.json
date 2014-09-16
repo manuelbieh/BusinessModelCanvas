@@ -1,0 +1,22 @@
+{
+  "name": "Business-Model-Canvas",
+  "version": "0.0.1",
+  "homepage": "https://github.com/manuelbieh/BusinessModelCanvas.git",
+  "authors": [
+    "Manuel Bieh <github@manuelbieh.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "src/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10",
+    "normalize.css": "~3.0.0"
+  }
+}
