@@ -1,0 +1,72 @@
+body.is-loading {
+
+	#loading {
+		background: white;
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.8;
+		position: fixed;
+		top: 0;
+		transition: all 1s ease-out;
+		z-index: 8192;
+		width: 100%;
+	}
+
+}
+
+#loading {
+
+	opacity: 0;
+	display: none;
+
+	.bubbleLoad {
+		text-align: center;
+		width:240px;
+		height:150px;
+		margin: auto;
+		margin-top: 5%;
+	}
+
+	.bubbleLoad span {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30px;
+		height: 30px;
+		margin: 75px auto;
+		background: #1197B8;
+		border-radius: 150px;
+		animation: bubbleLoad 0.8s infinite alternate;
+	}
+
+	#bubbleLoad1 {
+		animation-delay: 0s;
+	}
+
+	#bubbleLoad2 {
+		animation-delay: 0.24s;
+	}
+
+	#bubbleLoad3 {
+		animation-delay: 0.48s;
+	}
+
+	@keyframes bubbleLoad {
+
+		0% {
+			width: 30px;
+			height: 30px;
+			background-color:#1197B8;
+			transform: translateY(0);
+		}
+
+		100% {
+			width: 72px;
+			height: 72px;
+			background-color:#FFFFFF;
+			transform: translateY(-63px);
+		}
+
+	}
+
+}

@@ -14,15 +14,15 @@ module.exports = function(grunt) {
 			],
 
 			tasks: [
-				'clean:dev', 
-				'copy:dev', 
-				'useminPrepare', 
+				'clean:dev',
+				'copy:dev',
+				'useminPrepare',
 				'sass:dev',
-				'concat', 
-				'uglify', 
-				'cssmin', 
-				'autoprefixer', 
-				'rev', 
+				'concat',
+				'uglify',
+				'cssmin',
+				'autoprefixer',
+				// 'rev',
 				'usemin'
 			]
 

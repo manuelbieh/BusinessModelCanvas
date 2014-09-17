@@ -1,0 +1,13 @@
+<div class="minigrid">
+	<div class="col w6">
+		{{#if models}}
+			<ul>
+			{{#each models}}
+				<li><a href="/canvas/{{@key}}">{{@key}}</li>
+			{{/each}}
+			</ul>
+		{{else}}
+			<p>Looks like there are no canvases, yet. Go <a href="/create">create one</a></p>
+		{{/if}}
+	</div>
+</div>

@@ -1,0 +1,38 @@
+
+.minigrid:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.minigrid {
+
+	.col {
+
+		float: left;
+		max-width: 100%;
+
+		&.w3 {
+			width: calc(100%/4);
+		}
+
+		&.w4 {
+			width: calc(100%/3);
+		}
+
+		&.w6 {
+			width: 50%;
+		}
+
+		&.w8 {
+			width: calc(100%/1.5);
+		}
+
+		&.centered {
+			margin: auto;
+			float: none;
+		}
+
+	}
+
+}

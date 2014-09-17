@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	//grunt.loadTasks('grunt/_config.js');
 	grunt.loadTasks('grunt');
 
-	grunt.registerTask('serve', 
+	grunt.registerTask('serve',
 		'Starts a static webserver with livereload',
 		function (target) {
 
@@ -21,18 +21,18 @@ module.exports = function(grunt) {
 
 			if (target === 'dist') {
 				return grunt.task.run(['build', 'connect:dist:keepalive']);
-			} else if(target === 'dev') {
+			} else if(target === 'build') {
 				tasks = [
-					'dev', 
-					'configureRewriteRules', 
-					'connect:livereload', 
+					'build',
+					'configureRewriteRules',
+					'connect:livereload',
 					'watch'
 				];
 			} else {
 				tasks = [
-					'build', 
-					'configureRewriteRules', 
-					'connect:livereload', 
+					'dev',
+					'configureRewriteRules',
+					'connect:livereload',
 					'watch'
 				];
 			}
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 
 	);
 
-	grunt.registerTask('deploy', 
+	grunt.registerTask('deploy',
 		'Deploys dist/htdocs folder on a public webserver via ftp',
 		function(target) {
 
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 			'uglify',
 			'cssmin',
 			'autoprefixer',
-			'rev',
+			// 'rev',
 			'usemin',
 			'newer:imagemin',
 			//'clean:post'

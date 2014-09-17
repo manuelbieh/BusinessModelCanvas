@@ -5,7 +5,8 @@
 body {
 	background: $background-color;
 	color: $text-color;
-	font-size: 12px;
+	font-size: 13px;
+	line-height: 19px;
 }
 
 h1 {
@@ -15,4 +16,17 @@ h1 {
 
 h1:first-child {
 	margin-top: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	vertical-align: middle;
+}
+
+#menu a {
+	color: white;
 }

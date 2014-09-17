@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "jquery": "1.10",
-    "normalize.css": "~3.0.0"
+    "normalize.css": "~3.0.0",
+    "handlebars": "~2.0.0",
+    "q": "~2.0.2"
   }
 }

@@ -4,18 +4,18 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+<title>Business Model Canvas</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Business Model Canvas</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<!-- build:css css/vendor.css -->
+<!-- build:css /css/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="components/normalize.css/normalize.css" />
 <!-- endbower -->
 <!-- endbuild -->
-<!-- build:css(dist/htdocs) css/styles.css -->
+<!-- build:css(dist/htdocs) /css/styles.css -->
 <link href="css/custom.css" rel="stylesheet">
 <!-- endbuild -->
 
@@ -26,176 +26,40 @@
 </head>
 <body>
 
-
-
-
-<style>
-* {
-	box-sizing: border-box;
-}
-</style>
-
 <!--
 <input type="range" max="2" min="0.5" step="0.1" name="canvas-scale" value="1">
 -->
 
-<div class="outer">
-	<header>
-		<div class="minigrid">
-			<div class="col w4">
-			<h1>The Business Model Canvas</h1>
-			</div>
-			<div class="col w8">
-				<div class="info">
-					<div class="col w3">
-						For: 
-						<div contenteditable></div>
-					</div> 
-					<div class="col w3">
-						By: 
-						<div contenteditable></div>
-					</div>
-					<div class="col w3">
-						Date: 
-						<div contenteditable></div>
-					</div> 
-					<div class="col w3">
-						Version: 
-						<div contenteditable></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<main>
-		<div class="table">
-			<div class="row first">
-				<div class="cell">
+<section id="menu">
 
-					<div class="table">
-						<div class="row">
-							<div class="cell">
-								<div class="spacer">
-									<h1>Key Partners</h1>
-									<div id="kp" class="content" contenteditable>
-									...
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="table">
-									<div class="row">
-										<div class="cell">
-											<div class="spacer">
-												<h1>Key Activities</h1>
-												<div id="ka" class="content" contenteditable>
-												...
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="cell">
-											<div class="spacer">
-												<h1>Key Resources</h1>
-												<div id="kr" class="content" contenteditable>
-												...
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="spacer">
-									<h1>Value Proposition</h1>
-									<div id="vp" class="content" contenteditable>
-									...
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="table">
-									<div class="row">
-										<div class="cell">
-											<div class="spacer">
-												<h1>Customer Relationships</h1>
-												<div id="cr" class="content" contenteditable>
-												...
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="cell">
-											<div class="spacer">
-												<h1>Channels</h1>
-												<div id="ch" class="content" contenteditable>
-												...
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="spacer">
-									<h1>Customer Segments</h1>
-									<div id="cs" class="content" contenteditable>
-									...
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+	<button class="hamburger">
+		<span></span>
+	</button>
 
-			<div class="row second">
-				<div class="cell">
+	<div class="content">
+		<ul>
+			<li><a href="/">My Business Models</a></li>
+			<li><a href="/create">Create New</a></li>
+			<li><a href="/settings">Settings</a></li>
+			<!-- <li><a href="/canvas">Canvas-Test</a></li> -->
+		</ul>
+	</div>
 
-					<div class="table">
-						<div class="row">
-							<div class="cell">
-								<div class="spacer">
-									<h1>Cost Structure</h1>
-									<div class="content" contenteditable>
-									...
-									</div>
-								</div>
-							</div>
-							<div class="cell">
-								<div class="spacer">
-									<h1>Revenue Streams</h1>
-									<div class="content" contenteditable>
-									...
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+</section>
 
-	<footer>
-		<div class="minigrid">
-			<div class="col w6">Designed by: Business Model Foundry AG | Creative Commons SA-BY 3.0</div>
-			<div class="col w6">WebApp by Wiremore UG (haftungsbeschränkt)</div>
-		</div>
-	</footer>
+<section id="main">
 
+</section>
+
+<div id="loading">
+	<div class="bubbleLoad">
+		<span id="bubbleLoad1"></span>
+		<span id="bubbleLoad2"></span>
+		<span id="bubbleLoad3"></span>
+	</div>
 </div>
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
-<!-- build:js js/main.js -->
-<!-- bower:js -->
-<!-- endbower -->
-<script src="js/App.js"></script>
-<!-- endbuild -->
+<script data-main="/js/App.js" src="/js/libs/require.js"></script>
 
 
 </body>

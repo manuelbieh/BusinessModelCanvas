@@ -1,0 +1,156 @@
+<div id="canvas">
+	<header>
+		<div class="minigrid">
+			<div class="col w4">
+			<h1>The Business Model Canvas</h1>
+			</div>
+			<div class="col w8">
+				<div class="info">
+					<div class="col w3">
+						For:
+						<div contenteditable id="for">
+							{{canvas.for}}
+						</div>
+					</div>
+					<div class="col w3">
+						By:
+						<div contenteditable id="by">
+							{{canvas.by}}
+						</div>
+					</div>
+					<div class="col w3">
+						Date:
+						<div contenteditable id="date">
+							{{canvas.date}}
+						</div>
+					</div>
+					<div class="col w3">
+						Version:
+						<div contenteditable id="version">
+							{{canvas.version}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="table">
+			<div class="row first">
+				<div class="cell">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell">
+								<div class="spacer">
+									<h1>Key Partners</h1>
+									<div id="kp" class="content" contenteditable>
+									{{canvas.kp}}
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="table">
+									<div class="row">
+										<div class="cell">
+											<div class="spacer">
+												<h1>Key Activities</h1>
+												<div id="ka" class="content" contenteditable>
+												{{canvas.ka}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="cell">
+											<div class="spacer">
+												<h1>Key Resources</h1>
+												<div id="kr" class="content" contenteditable>
+												{{canvas.kr}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="spacer">
+									<h1>Value Proposition</h1>
+									<div id="vp" class="content" contenteditable>
+									{{canvas.vp}}
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="table">
+									<div class="row">
+										<div class="cell">
+											<div class="spacer">
+												<h1>Customer Relationships</h1>
+												<div id="cr" class="content" contenteditable>
+												{{canvas.cr}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="cell">
+											<div class="spacer">
+												<h1>Channels</h1>
+												<div id="ch" class="content" contenteditable>
+												{{canvas.ch}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="spacer">
+									<h1>Customer Segments</h1>
+									<div id="cs" class="content" contenteditable>
+									{{canvas.cs}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row second">
+				<div class="cell">
+
+					<div class="table">
+						<div class="row">
+							<div class="cell">
+								<div class="spacer">
+									<h1>Cost Structure</h1>
+									<div class="content" id="co" contenteditable>
+									{{canvas.co}}
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="spacer">
+									<h1>Revenue Streams</h1>
+									<div class="content" id="rs" contenteditable>
+									{{canvas.rs}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="minigrid">
+			<div class="col w6">Designed by: Business Model Foundry AG | Creative Commons SA-BY 3.0</div>
+			<div class="col w6">WebApp by Wiremore UG (haftungsbeschränkt)</div>
+		</div>
+	</footer>
+</div>

@@ -4,17 +4,21 @@ module.exports = function(grunt) {
 
 		options: {
 			port: 9009,
-			livereload: 35731, 
+			livereload: 35731,
 			// Default is 35729. Feel free to change when working on several projects
 			// at the same time to prevent "port already in use" errors
 			useAvailablePort: true,
-			hostname: 'localhost' // use 0.0.0.0 to make it available to public. Note: 0.0.0.0 might be fucked up on windows machines.
+			hostname: '0.0.0.0' // use 0.0.0.0 to make it available to public. Note: 0.0.0.0 might be fucked up on windows machines.
 		},
 		rules: [
 			{
-				from: '/example.html',
+				from: '^/(create|settings|canvas)$',
 				to: '/index.html'
-			}
+			},
+			{
+				from: '^/canvas/(.*)$',
+				to: '/index.html'
+			},
 		],
 		livereload: {
 
