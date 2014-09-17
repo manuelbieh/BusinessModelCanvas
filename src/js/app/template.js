@@ -1,4 +1,4 @@
-define(['jquery', 'handlebars', 'app/config', 'app/callback'], function($, hbs, cfg, callback) {
+define(['jquery', 'handlebars', 'app/config', 'app/callback'], function($, hbs, Config, callback) {
 
 	hbs.registerHelper('breaklines', function(text) {
 		text = hbs.Utils.escapeExpression(text);
@@ -10,6 +10,10 @@ define(['jquery', 'handlebars', 'app/config', 'app/callback'], function($, hbs, 
 		text = hbs.Utils.escapeExpression(text);
 		text = text.toUpperCase();
 		return new hbs.SafeString(text);
+	});
+
+	hbs.registerHelper('debug', function(text) {
+		return JSON.stringify(text);
 	});
 
 	hbs.registerHelper('chain', function () {
@@ -28,13 +32,17 @@ define(['jquery', 'handlebars', 'app/config', 'app/callback'], function($, hbs, 
 		return value;
 	});
 
+	$.ajax(Config.baseUrl + '/partials/canvas-preview.html').done(function(template) {
+	 	hbs.registerPartial('canvasPreview', template);
+	});
+
 	return {
 
 		render: function(tplName, tplData) {
 
 			tplName = tplName.replace(/\.html$/,'');
 
-			var loadTpl = $.ajax(cfg.baseUrl + '/templates/' + tplName + '.html');
+			var loadTpl = $.ajax(Config.baseUrl + '/templates/' + tplName + '.html');
 
 			var params = {
 				template: tplName,

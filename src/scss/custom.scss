@@ -1,21 +1,76 @@
 @import "config";
 @import "colors";
-
 @import "defaults";
+
+@import "print";
+
 
 @import "ui";
 @import "minigrid";
 @import "menu";
 @import "canvas";
 
-header {
-	padding-top: 8px;
-}
-
 main {
 	height: 100%;
 }
 
 #main {
-	padding: 16px 16px 16px 64px;
+	padding: 16px 64px 16px 64px;
+	position: relative;
+}
+
+#models-list {
+
+	padding: 0;
+
+	li {
+		margin: 0;
+		list-style: none;
+	}
+
+	> li {
+		float: left;
+	}
+
+}
+
+@media all and (max-width: 768px) {
+	#models-list > li {
+		float: none;
+	}
+
+	#main {
+		padding-right: 16px;
+	}
+}
+
+.ok {
+	color: $ok;
+}
+
+.warning {
+	color: $danger;
+}
+
+.errors {
+
+	background: rgb(255, 239, 239);
+	padding: 12px;
+	border: 2px solid rgb(182, 16, 16);
+	color: rgb(182, 16, 16);
+	display: none;
+
+	&.is-visible {
+		display: block;
+	}
+
+	p {
+		margin: 0;
+	}
+
+}
+
+[name="model-name"] {
+	width: 320px;
+	max-width: 100%;
 }

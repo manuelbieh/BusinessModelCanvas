@@ -1,0 +1,23 @@
+@media print {
+
+	#main {
+		padding: 0 !important;
+	}
+
+	#menu {
+		display: none;
+	}
+
+	*, *:hover, *:focus {
+		background: white !important;
+	}
+
+	#canvas-help {
+		display: none;
+	}
+
+	#canvas footer {
+		font-size: 10px;
+	}
+
+}

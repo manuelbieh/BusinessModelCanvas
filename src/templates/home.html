@@ -1,9 +1,14 @@
 <div class="minigrid">
 	<div class="col w6">
+
+		<h1>Business Model Canvas Editor</h1>
+
 		{{#if models}}
-			<ul>
+			<ul id="models-list">
 			{{#each models}}
-				<li><a href="/canvas/{{@key}}">{{@key}}</li>
+				<li>
+					{{>canvasPreview this}}
+				</li>
 			{{/each}}
 			</ul>
 		{{else}}

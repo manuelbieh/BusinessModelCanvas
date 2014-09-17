@@ -5,17 +5,26 @@
 body {
 	background: $background-color;
 	color: $text-color;
-	font-size: 13px;
-	line-height: 19px;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 h1 {
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: normal;
+	color: #1197B8;
+	line-height: 1.33em;
 }
 
 h1:first-child {
 	margin-top: 0;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #1197B8;
+	line-height: 1.33em;
 }
 
 label {
@@ -27,6 +36,12 @@ input[type="radio"] {
 	vertical-align: middle;
 }
 
-#menu a {
-	color: white;
+input[type="text"] {
+	padding: 12px;
+}
+
+button {
+	padding: 8px 22px;
+	font-weight: bold;
+	letter-spacing: 0.07em;
 }

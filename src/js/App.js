@@ -32,16 +32,20 @@ require(["jquery", "handlebars", "FastClick", "jquery.locationObserver", "app/ca
 		$.locationObserver.start();
 	}, 150);
 
-	$(location).on('change', function() {
-		Router.run();
-	});
+	// $(location).on('change', function() {
+	// 	Router.run();
+	// });
 
 	FastClick.attach(document.body);
 
-	Router.add('/(index.html)?', function() {
+	// Router.add('/(.*)', function() {
+	// 	alert('always executed');
+	// });
+
+	Router.add('/(index.html)?$', function() {
 
 		var models = Canvas.getAllCanvases();
-
+console.log(models);
 		Template.render('home', {
 			models: models
 		});
@@ -54,6 +58,53 @@ require(["jquery", "handlebars", "FastClick", "jquery.locationObserver", "app/ca
 
 	Router.add('/settings', function() {
 		Template.render('settings');
+	});
+
+	Router.add('/edit/(.*)', function(canvasName) {
+
+		var canvasData = Canvas.getCanvas(canvasName);
+
+		Template.render('edit', {
+			canvas: canvasData,
+			canvasName: canvasName
+		}).done(function() {
+
+		});
+
+	});
+
+	Router.add('/delete/([^\/]+)/([^\/]+)$', function(canvasName, created) {
+	// Router.add('/delete/(.*)/(.*)$', function(canvasName, created) {
+
+		var canvasData = Canvas.getCanvas(canvasName);
+
+		if(typeof canvasData !== 'undefined' && canvasData.created == created) {
+			Canvas.remove(canvasName);
+			Template.render('delete.success');
+			// Router.go('/');
+		} else {
+			Template.render('delete.fail');
+		}
+
+		return 1;
+
+	});
+
+	Router.add('/delete/([^\/]+)$', function(canvasName) {
+
+		var canvasData = Canvas.getCanvas(canvasName);
+
+		Template.render('delete', {
+			canvas: canvasData,
+			canvasName: canvasName
+		}).done(function() {
+
+			$('#delete-yes').on('click', function() {
+				Router.go('/delete/' + canvasName + '/' + canvasData.created);
+			});
+
+		});
+
 	});
 
 	Router.add('/canvas', function() {
@@ -84,7 +135,7 @@ require(["jquery", "handlebars", "FastClick", "jquery.locationObserver", "app/ca
 					Canvas.set(
 						canvasName,
 						el.attr('id'),
-						el.html()
+						$.trim(el.html())
 					);
 
 				});
@@ -92,6 +143,13 @@ require(["jquery", "handlebars", "FastClick", "jquery.locationObserver", "app/ca
 			});
 
 		});
+
+	});
+
+
+	Router.add('/about', function() {
+
+		Template.render('about');
 
 	});
 

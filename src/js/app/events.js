@@ -1,4 +1,4 @@
-define(["jquery", "app/callback", "app/ui", "app/settings", "app/router", "app/config"], function($, Callback, UI, Settings, Router, Config) {
+define(["jquery", "app/callback", "app/ui", "app/settings", "app/router", "app/config", "app/canvas"], function($, Callback, UI, Settings, Router, Config, Canvas) {
 
 	$(function() {
 
@@ -12,43 +12,17 @@ define(["jquery", "app/callback", "app/ui", "app/settings", "app/router", "app/c
 		UI.loading.show();
 	});
 
+	$(document).on('click', '.go-back', function() {
+		history.back();
+	});
+
 	$(document).find('[name="canvas-scale"]').on('input', function(e) {
 		var scale = $(this).val();
 		self.setSize(scale);
 	});
 
-	$(document).find('[contenteditable]').each(function(i, el) {
-
-		el = $(el);
-
-		el.html(self.getValueForElement(el));
-
-		el.on('input', function(e) {
-
-			var target = $(this);
-			self.setValueForElement(el, target.html());
-
-		}).on('focus', function(e) {
-
-			var target = $(this);
-			if(target.html().replace(/\s*/g,'') === self.placeholder) {
-				target.html('');
-			}
-
-			$('body').addClass('is-editing');
-
-		}).on('blur', function() {
-
-			var target = $(this);
-
-			if(target.html().replace(/\s*/g,'') === '') {
-				target.html(self.placeholder);
-			}
-
-			$('body').removeClass('is-editing');
-
-		});
-
+	$(document).on('click', '#canvas-help', function(e) {
+		$('#canvas').toggleClass('show-description');
 	});
 
 	$(document).find('header').find('[contenteditable]').on('input', function(e) {
@@ -59,9 +33,32 @@ define(["jquery", "app/callback", "app/ui", "app/settings", "app/router", "app/c
 		UI.menu.toggle();
 	});
 
-	$(document).on('click', '#create-canvas', function() {
-		Router.go('/canvas/' + $('[name="model-name"]').val());
+	$(document).on('submit', '#create', function(e) {
+
+		var canvasName = $('[name="model-name"]').val();
+
+		if(canvasName.length === 0) {
+			$('.errors').html('<p>Please enter a name.</p>').addClass('is-visible');
+			return false;
+		}
+
+		if(typeof Canvas.getCanvas(canvasName) !== "undefined") {
+			$('.errors').html('<p>Name already exists. Please choose another one.</p>').addClass('is-visible');
+			return false;
+		}
+
+		Canvas.save(canvasName);
+
+		Router.go('/canvas/' + canvasName);
+
+		e.preventDefault();
+		return false;
+
 	});
+
+	// $(document).on('click', '#create-canvas', function() {
+	// 	$('#create').trigger('submit');
+	// });
 
 
 	Callback.on('pageload', function() {

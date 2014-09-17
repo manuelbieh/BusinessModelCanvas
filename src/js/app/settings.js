@@ -1,22 +1,37 @@
 define(["jquery", "app/callback"], function($, Callback) {
 
+	var _defaults = {
+		autosave: true
+	};
+
 	var settings = {
 
 		getAll: function() {
 			return JSON.parse(
 				localStorage.getItem('settings')
-			) || {};
+			) || undefined;
 		},
 
 		get: function(key) {
 
-			return this.getAll()[key] || null;
+			var allSettings = this.getAll();
+
+			if(typeof allSettings !== "undefined") {
+				return this.getAll()[key];
+			} else if(typeof _defaults[key] !== "undefined") {
+				return _defaults[key];
+			}
 
 		},
 
 		set: function(key, value) {
 
 			var settings = this.getAll();
+
+			if(typeof settings === "undefined" || settings === null) {
+				settings = {};
+			}
+
 			settings[key] = value;
 
 			localStorage.setItem('settings',
@@ -25,7 +40,7 @@ define(["jquery", "app/callback"], function($, Callback) {
 
 		}
 
-	}
+	};
 
 	$(document).on('change', '#settings input', function(e) {
 
@@ -62,6 +77,10 @@ define(["jquery", "app/callback"], function($, Callback) {
 		if(data && data.template == 'settings') {
 
 			var currentSettings = settings.getAll();
+
+			if(typeof currentSettings === "undefined") {
+				return;
+			}
 
 			$.each(currentSettings, function(key, value) {
 

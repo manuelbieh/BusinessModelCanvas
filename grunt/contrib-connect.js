@@ -12,11 +12,11 @@ module.exports = function(grunt) {
 		},
 		rules: [
 			{
-				from: '^/(create|settings|canvas)$',
+				from: '^/(create|settings|canvas|delete|edit|about)$',
 				to: '/index.html'
 			},
 			{
-				from: '^/canvas/(.*)$',
+				from: '^/(canvas|delete|edit)/(.*)$',
 				to: '/index.html'
 			},
 		],

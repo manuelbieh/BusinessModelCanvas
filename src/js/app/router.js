@@ -24,6 +24,7 @@ define(['jquery', 'app/callback', 'app/utils', 'app/config'], function($, Callba
 	var Router = {
 
 		END: 1,
+		FALLBACK: 2,
 
 		set: function(prop, value) {
 
@@ -101,7 +102,7 @@ define(['jquery', 'app/callback', 'app/utils', 'app/config'], function($, Callba
 					var match = this.match(url, route);
 
 					if(match != null) {
-
+console.log(route, match);
 						//var matching = match.splice(0,1);
 						var matching = match.slice(1);
 

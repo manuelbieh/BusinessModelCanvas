@@ -36,3 +36,17 @@
 	}
 
 }
+
+@media all and (max-width: 768px) {
+
+	.minigrid .col {
+
+		&.w3,
+		&.w4,
+		&.w6 {
+			width: 100%;
+		}
+
+	}
+
+}

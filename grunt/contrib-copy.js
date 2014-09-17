@@ -16,6 +16,7 @@ module.exports = function(grunt) {
 					'js/**/*.js',
 					'css/**/*.css',
 					'templates/**/*',
+					'partials/**/*',
 					//'js/vendor/*.js',
 					//'components/**/*'
 				]
@@ -36,6 +37,7 @@ module.exports = function(grunt) {
 					'js/**/*.js',
 					'css/**/*.css',
 					'templates/**/*',
+					'partials/**/*',
 				//	'components/**/*'
 				]
 			}]
