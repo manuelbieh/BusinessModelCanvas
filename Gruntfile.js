@@ -103,6 +103,14 @@ module.exports = function(grunt) {
 		]
 	);
 
+	grunt.registerTask('deploy-phonegap',
+		'Copies the whole webapp to the phonegap project folder',
+		[
+			'dev',
+			'copy:phonegap'
+		]
+	);
+
 	grunt.registerTask('default', ['serve:dev']);
 
 	// Alias tasks

@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 					'css/**/*.css',
 					'templates/**/*',
 					'partials/**/*',
+					'config.xml'
 					//'js/vendor/*.js',
 					//'components/**/*'
 				]
@@ -38,8 +39,18 @@ module.exports = function(grunt) {
 					'css/**/*.css',
 					'templates/**/*',
 					'partials/**/*',
+					'config.xml'
 				//	'components/**/*'
 				]
+			}]
+		},
+		phonegap: {
+			files: [{
+				expand: true,
+				dot: true,
+				cwd: '<%= config.dirs.dist %>/htdocs',
+				dest: 'app/www',
+				src: ['**/*']
 			}]
 		}
 	});
