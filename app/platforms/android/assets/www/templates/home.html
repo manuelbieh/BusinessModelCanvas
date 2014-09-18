@@ -1,0 +1,18 @@
+<div class="minigrid">
+	<div class="col w6">
+
+		<h1>Business Model Canvas Editor</h1>
+
+		{{#if models}}
+			<ul id="models-list">
+			{{#each models}}
+				<li>
+					{{>canvasPreview this}}
+				</li>
+			{{/each}}
+			</ul>
+		{{else}}
+			<p>Looks like there are no canvases, yet. Go <a href="/create">create one</a></p>
+		{{/if}}
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="minigrid">
+	<div class="col w6">
+		<h1>Delete Canvas</h1>
+		{{#if canvas}}
+			<p>Are you sure you want to delete "{{canvasName}}"?</p>
+			<button id="delete-yes" class="warning">Yes</button> <button class="go-back ok">Nah, go back</button>
+		{{else}}
+			<p>Canvas not found.</p>
+		{{/if}}
+	</div>
+</div>
